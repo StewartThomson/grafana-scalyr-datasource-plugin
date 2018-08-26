@@ -50,10 +50,22 @@
         </div>
         <div class="gf-form-inline">
             <div class="gf-form">
-                <label class="gf-form-label width-10">Interval (seconds)</label>
+                <label class="gf-form-label width-10">Interval Type</label>
+                <select class="gf-form-input" ng-model="ctrl.target.intervalType" ng-change="ctrl.onChangeInternal()"
+                        ng-options="f as f for f in ctrl.intervalTypes"></select>
+            </div>
+        </div>
+        <div class="gf-form-inline">
+            <div class="gf-form" ng-if="ctrl.target.intervalType == 'windowed'">
+                <label class="gf-form-label width-10">Interval Window (seconds)</label>
                 <input class="input-small gf-form-input width-10" type="number"
                        ng-change="ctrl.onChangeInternal()"
                        ng-model="ctrl.target.secondsInterval">
+            </div>
+            <div class="gf-form" ng-if="ctrl.target.intervalType == 'fixed'">
+                <label class="gf-form-label width-10">Fixed Window</label>
+                <select class="gf-form-input" ng-model="ctrl.target.chosenType" ng-change="ctrl.onChangeInternal()"
+                        ng-options="f as f for f in ctrl.supportedIntervalTypes"></select>
             </div>
         </div>
     </div>
