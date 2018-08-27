@@ -2,7 +2,7 @@ import {QueryCtrl} from 'app/plugins/sdk';
 import './css/query-editor.css!'
 
 const TIME_INDEX = 1;
-const INTERVAL_TYPE_WINDOW = 'windowed';
+const INTERVAL_TYPE_WINDOW = 'window';
 const INTERVAL_TYPE_FIXED = 'fixed';
 
 export class GenericDatasourceQueryCtrl extends QueryCtrl {
@@ -25,7 +25,7 @@ export class GenericDatasourceQueryCtrl extends QueryCtrl {
             INTERVAL_TYPE_WINDOW, INTERVAL_TYPE_FIXED
         ];
         this.supportedIntervalTypes = [
-            'minutes', 'hours', 'days', 'months'
+            'minute', 'hour', 'day', 'week', 'month'
         ];
         this.target.graphFunction = this.target.graphFunction || this.graphFunctions[0];
         this.target.intervalType = this.target.intervalType || this.intervalTypes[0];

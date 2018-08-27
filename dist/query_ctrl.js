@@ -59,7 +59,7 @@ System.register(['app/plugins/sdk', './css/query-editor.css!'], function (_expor
             }();
 
             TIME_INDEX = 1;
-            INTERVAL_TYPE_WINDOW = 'windowed';
+            INTERVAL_TYPE_WINDOW = 'window';
             INTERVAL_TYPE_FIXED = 'fixed';
 
             _export('GenericDatasourceQueryCtrl', GenericDatasourceQueryCtrl = function (_QueryCtrl) {
@@ -77,7 +77,7 @@ System.register(['app/plugins/sdk', './css/query-editor.css!'], function (_expor
                     // this.target.interval = this.target.interval || 60;
                     _this.graphFunctions = ['mean', 'min', 'max', 'sumPerSecond', 'median', 'p10', 'p50', '95', '99', '999', 'p(n)', 'fraction', '', 'rate', 'count'];
                     _this.intervalTypes = [INTERVAL_TYPE_WINDOW, INTERVAL_TYPE_FIXED];
-                    _this.supportedIntervalTypes = ['minutes', 'hours', 'days', 'months'];
+                    _this.supportedIntervalTypes = ['minute', 'hour', 'day', 'week', 'month'];
                     _this.target.graphFunction = _this.target.graphFunction || _this.graphFunctions[0];
                     _this.target.intervalType = _this.target.intervalType || _this.intervalTypes[0];
                     _this.target.chosenType = _this.target.chosenType || _this.supportedIntervalTypes[0];
